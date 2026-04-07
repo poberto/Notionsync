@@ -29,7 +29,7 @@ def get_google_tasks_service():
             creds.refresh(Request())
         else:
             flow = InstalledAppFlow.from_client_secrets_file(
-                '/home/peter/Notionsync/client_secret_139386008790-8qci4i09ek46b80vps9tm2dn2205r0v8.apps.googleusercontent.com.json', ['https://www.googleapis.com/auth/tasks'])
+                'client_secret.json', ['https://www.googleapis.com/auth/tasks'])
             creds = flow.run_local_server(port=0)
             # Save the credentials for the next run
             with open('token.json', 'w') as token:
@@ -157,7 +157,7 @@ def task_exists(service, title):
 
 # NOTION SETUP
 NOTION_TOKEN = ""
-DATABASE_ID = "47a751804e084c129a4f6b4ce1d3de15"
+DATABASE_ID = ""  # your Notion database ID
 NOTION_HEADERS = {
     "Authorization": f"Bearer {NOTION_TOKEN}",
     "Content-Type": "application/json",
