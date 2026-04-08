@@ -5,7 +5,7 @@ from datetime import datetime
 client = NotionClient(token_v2="")
 
 # Access the database
-database_url = "https://www.notion.so/47a751804e084c129a4f6b4ce1d3de15"
+database_url = ""  # your Notion database URL
 database = client.get_block(database_url)
 
 # For each event fetched from Google Calendar, add it to the Notion database
